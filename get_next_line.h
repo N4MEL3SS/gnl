@@ -18,7 +18,8 @@
 
 char	*get_next_line(int fd);
 
-void	*ft_free_ptr(void *ptr);
+char	*buff_str_init(int buff_size);
+void	ft_free_ptr(char **ptr1, char **ptr2);
 int		ft_str_chr(char *str, ssize_t *len);
 void	ft_str_cpy(char *str, ssize_t line_len);
 char	*ft_str_join(char *dst, char *src, ssize_t line_len);

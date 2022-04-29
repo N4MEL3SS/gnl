@@ -12,10 +12,23 @@
 
 #include "get_next_line.h"
 
-void	*ft_free_ptr(void *ptr)
+char	*buff_str_init(int buff_size)
 {
-	free(ptr);
-	return (NULL);
+	char	*buff_str;
+
+	buff_str = malloc(sizeof(char) * ((ssize_t)buff_size + 1));
+	if (!buff_str)
+		return (NULL);
+	*buff_str = '\0';
+	return (buff_str);
+}
+
+void	ft_free_ptr(char **ptr1, char **ptr2)
+{
+	free(*ptr1);
+	free(*ptr2);
+	*ptr1 = NULL;
+	*ptr2 = NULL;
 }
 
 void	ft_str_cpy(char *str, ssize_t line_len)
